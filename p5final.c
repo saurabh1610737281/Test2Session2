@@ -1,8 +1,9 @@
 #include <stdio.h>
-int input()
+#include <math.h>
+int input_array_size();
 {
   int n;
-  printf("Enter the number\n");
+  printf("enter the number\n");
   scanf("%d",&n);
   return n;
 }
@@ -10,38 +11,36 @@ int input()
 void init_array(int n, int a[n])
 {
   for(int i=0;i<n;i++)
-    a[i] = i;
+  a[i]=i;
   a[1]=0;
 }
 
-void ets(int n, int a[n])
+void erotosthenes_seive(int n, int a[n])
 {
   int i=0;
-   /* Find next non-zero number */
-  while(i<sqrt(n)){
-   for(;a[i]==0 ;i++);
-   for(int k=i+i;k<n;k += i)
-     a[i] = 0;
-   i++;
-  }
+  while(i<sqrt(n))
+    {
+      for(i;a[i]==0;i++);
+      for(int k=i+i;k<n;k+=i)
+      a[1]=0;
+      i++;
+    }
 }
 
-
-void display(int n, int a[n])
+void output(int n, int a[n])
 {
   for(int i=0;i<n;i++)
-    if(a[i]!=0)
-      printf("%d ",a[i]);
-  printf("\n");
+  if(a[i]=0)
+  printf("%d", n[i]);
 }
 
 int main()
 {
   int n;
-  n=input();
+  n=input_array_size()
   int a[n];
   init_array(n,a);
-  ets(n,a);
-  display(n,a);
+  erotosthenes_sieve(n,a);
+  output(n,a);
   return 0;
 }
